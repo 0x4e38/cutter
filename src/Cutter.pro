@@ -245,7 +245,8 @@ HEADERS  += \
     dialogs/AsyncTaskDialog.h \
     widgets/StackWidget.h \
     widgets/RegistersWidget.h \
-    widgets/BacktraceWidget.h
+    widgets/BacktraceWidget.h \
+    plugins/CutterPlugin.h
 
 FORMS    += \
     dialogs/AboutDialog.ui \
