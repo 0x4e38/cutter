@@ -1651,3 +1651,16 @@ QList<QString> CutterCore::getColorThemes()
         r << s.toString();
     return r;
 }
+
+void CutterCore::setCutterPlugins(QList<CutterPlugin*> plugins)
+{
+    this->plugins.clear();
+    for (auto plugin : plugins) {
+        this->plugins.append(plugin);
+    }
+}
+
+QList<CutterPlugin*> CutterCore::getCutterPlugins()
+{
+    return plugins;
+}
