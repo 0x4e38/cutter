@@ -224,6 +224,13 @@ void MainWindow::initUI()
     connect(refresh_shortcut, SIGNAL(activated()), this, SLOT(refreshAll()));
 
     connect(core, SIGNAL(projectSaved(const QString &)), this, SLOT(projectSaved(const QString &)));
+
+    /* Load plugins */
+    QList<CutterPlugin*> plugins = Core()->getCutterPlugins();
+    for (auto plugin : plugins) {
+        CutterDockWidget *pluginDock = plugin->setupInterface(this);
+        tabifyDockWidget(dashboardDock, pluginDock);
+    }
 }
 
 void MainWindow::on_actionExtraGraph_triggered()
